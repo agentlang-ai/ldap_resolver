@@ -1,0 +1,6 @@
+{:service {:port 8080}
+ :Ldap.Resolver.Core/Config
+ {:Host #$ LDAP_HOST
+  :Port #$ LDAP_PORT
+  :BindDn #$ LDAP_BIND_DN
+  :Password #$ LDAP_PASSWORD}}
