@@ -1,7 +1,7 @@
 (component
  :Organization.Core
  {:clj-import
-  '[(:require [ldap.resolver.model])]})
+  (quote [(:require [ldap.resolver.model])])})
 
 (entity
  :Person
