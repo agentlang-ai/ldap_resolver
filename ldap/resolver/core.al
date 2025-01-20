@@ -57,7 +57,7 @@
     (let [f (query-clause-to-ldap-filter clause objectClass)]
       (log/info (str log-prefix "ldap-query filter:" f))
       (try
-        (let [results (ldap/search @ldap-conn base
+        (let [results (ldap/search (deref ldap-conn) base
                                    {:filter f
                                     :scope :sub})
               records (map (fn [result] (dissoc result :objectClass)) results)]
