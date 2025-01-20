@@ -60,7 +60,7 @@
         (let [results (ldap/search @ldap-conn base
                                    {:filter f
                                     :scope :sub})
-              records (map #(dissoc % :objectClass) results)]
+              records (map (fn [result] (dissoc result :objectClass)) results)]
           (log/info (str log-prefix "ldap-query results: " (count records) " total"))
           (mapv (partial cn/make-instance entity-name) records))
         (catch Exception ex
