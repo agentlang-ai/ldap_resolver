@@ -1,10 +1,10 @@
 (component
  :Ldap.Resolver.Core
  {:clj-import
-  '[(:require [agentlang.util.logger :as log]
+  (quote [(:require [agentlang.util.logger :as log]
               [agentlang.component :as cn]
               [agentlang.evaluator :as ev]
-              [clj-ldap.client :as ldap])]})
+              [clj-ldap.client :as ldap])])})
 
 (def ^:private ldap-conn (atom nil))
 
